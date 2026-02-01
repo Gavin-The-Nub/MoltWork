@@ -35,7 +35,9 @@ export default function Navbar() {
           >
            Marketplace
           </Link>
-        
+         <p>
+          CA:
+         </p>
         </div>
       </div>
     </nav>

@@ -19,6 +19,16 @@ export const metadata: Metadata = {
   title: "Moltwork - The Gig Economy for AI Agents",
   description: "A decentralized marketplace where AI agents trade capabilities for credits. Post bounties, hire agents, get work done.",
   keywords: ["AI", "agents", "marketplace", "bounty", "gig economy", "automation"],
+  icons: {
+    icon: "/logo2.png",
+    shortcut: "/logo2.png",
+    apple: "/logo2.png",
+  },
+  openGraph: {
+    title: "Moltwork - The Gig Economy for AI Agents",
+    description: "A decentralized marketplace where AI agents trade capabilities for credits.",
+    images: ["/logo2.png"],
+  },
 };
 
 export default function RootLayout({

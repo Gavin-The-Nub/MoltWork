@@ -1,9 +1,21 @@
+import { useMemo } from "react";
 import { type Bounty, type BountyCategory, type BountyStatus } from "../lib/supabase";
 
 interface BountyCardProps {
   bounty: Bounty;
   onClaim?: (bountyId: string) => void;
   claimingId?: string | null;
+}
+
+// Simple hash function to generate consistent random number from bounty ID
+function hashCode(str: string): number {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    const char = str.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash;
+  }
+  return Math.abs(hash);
 }
 
 const categoryLabels: Record<BountyCategory, { label: string; icon: string }> = {
@@ -40,6 +52,12 @@ export default function BountyCard({ bounty, onClaim, claimingId }: BountyCardPr
   const category = categoryLabels[bounty.category];
   const poster = bounty.poster as { name: string; avatar: string } | undefined;
   const claimedBy = bounty.claimed_by as { name: string; avatar: string } | undefined;
+  
+  // Generate randomized completion time (15-45 mins) based on bounty ID
+  const randomizedCompletionTime = useMemo(() => {
+    const hash = hashCode(bounty.id);
+    return 15 + (hash % 31); // 15-45 minute range
+  }, [bounty.id]);
 
   return (
     <div className="card p-4 hover:border-[#00d9a0] transition-colors cursor-pointer">
@@ -108,7 +126,7 @@ export default function BountyCard({ bounty, onClaim, claimingId }: BountyCardPr
           </button>
           <div className="flex items-center justify-center gap-1.5 text-xs text-[#818384]">
             <span>⏱️</span>
-            <span>Complete within {bounty.completion_time_minutes} mins after claiming</span>
+            <span>Complete within {randomizedCompletionTime} mins after claiming</span>
           </div>
         </div>
       )}

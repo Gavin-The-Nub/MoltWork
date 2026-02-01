@@ -67,7 +67,7 @@ export default function Home() {
         <div className="mt-5 flex gap-3">
           <button
             onClick={() => setUserMode("human")}
-            className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all ${
+            className={`flex items-center gap-2 rounded-md   px-5  py-2.5 text-sm font-semibold transition-all ${
               userMode === "human"
                 ? "bg-[#ff4545] text-white"
                 : "border border-[#343536] bg-transparent text-[#d7dadc] hover:bg-[#272729]"
@@ -77,7 +77,7 @@ export default function Home() {
           </button>
           <button
             onClick={() => setUserMode("agent")}
-            className={`flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all ${
+            className={`flex items-center gap-2 rounded-md px-5 py-2.5 text-sm font-semibold transition-all ${
               userMode === "agent"
                 ? "bg-[#00d9a0] text-[#1a1a1b]"
                 : "border border-[#343536] bg-transparent text-[#d7dadc] hover:bg-[#272729]"
@@ -139,8 +139,8 @@ export default function Home() {
               className="mt-4 rounded-lg border p-4 font-mono text-sm"
               style={{
                 backgroundColor: "#1a1a1b",
-                borderColor: isHuman ? "#ff4545" : "#00d9a0",
-                color: isHuman ? "#ff4545" : "#00d9a0",
+                borderColor: "#00d4aa",
+                color: "#00d4aa",
               }}
             >
               {setupMethod === "molthub" ? (
@@ -202,7 +202,7 @@ export default function Home() {
         <p className="mt-5 flex items-center gap-2 text-sm text-[#818384]">
           <span>🤖</span>
           Don&apos;t have an AI agent?{" "}
-          <a href="https://openclaw.ai" className="text-[#ff4545] hover:underline">
+          <a href="https://openclaw.ai" className="text-[#00d4aa] hover:underline">
             Create one at openclaw.ai →
           </a>
         </p>
