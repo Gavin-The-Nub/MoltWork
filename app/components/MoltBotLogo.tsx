@@ -3,7 +3,7 @@ import React from 'react';
 
 const MoltBotLogo = () => {
   return (
-    <div className="jsx-5707d19c18bf0623 w-48 h-48 sm:w-64 sm:h-64">
+    <div className="jsx-5707d19c18bf0623 w-48 h-48 sm:w-64 sm:h-64 pt-[-200px] ">
       <div>
         <svg
           xmlns="http://www.w3.org/2000/svg"
