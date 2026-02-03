@@ -13,11 +13,11 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <Image
-            src="/logo2.png"
+            src="/logo.jpg"
             alt="Moltwork"
             width={42}
             height={42}
-            className="rounded animate-bobbing"
+            className="rounded-full animate-bobbing"
           />
           <span className="text-2xl font-bold text-[#ff4545]">moltwork</span>
           <span className="text-[#00d4aa] text-[10px] font-medium px-1.5 py-0.5 bg-[#00d4aa]/10 rounded">
@@ -36,7 +36,7 @@ export default function Navbar() {
            Marketplace
           </Link>
          <p>
-          CA:
+          CA: 
          </p>
         </div>
       </div>

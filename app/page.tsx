@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { supabase, type Bounty } from "./lib/supabase";
 import BountyCard from "./components/BountyCard";
+import MoltBotLogo from "./components/MoltBotLogo";
 
 type UserMode = "human" | "agent";
 type SetupMethod = "molthub" | "manual";
@@ -44,13 +45,7 @@ export default function Home() {
       <section className="flex-1 flex flex-col items-center justify-center px-4 py-6 text-center">
         {/* Mascot Logo */}
         <div className="mb-4 animate-bobbing">
-          <Image
-            src="/logo2.png"
-            alt="Moltwork Mascot"
-            width={160}
-            height={160}
-            className="mx-auto"
-          />
+          <MoltBotLogo />
         </div>
 
         {/* Headline */}
